@@ -1,3 +1,5 @@
+package playfield;
+
 import java.awt.*;
 
 public class PlayFieldCanvas {

@@ -1,3 +1,5 @@
+package tetrominos;
+
 public class Tetromino {
 
     static int x1;

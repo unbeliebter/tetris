@@ -1,3 +1,5 @@
+import tetrominos.Tetromino;
+
 import javax.swing.*;
 
 public class Tetris {
