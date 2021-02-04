@@ -1,3 +1,5 @@
+import java.awt.*;
+
 public class PlayFieldCanvas {
 
     private static int wide;
@@ -8,6 +10,10 @@ public class PlayFieldCanvas {
     }
 
     //setter & getter
+
+    public static void paint(Graphics graphics) {
+
+    }
 
     public static PlayField getPlayField() {
         return playField;
