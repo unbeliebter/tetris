@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 
 public class Tetris {
     public static void main(String[] args) {
@@ -10,6 +11,12 @@ public class Tetris {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
 
+        JPanel panel = new JPanel();
+
+        JButton buttonEnd = new JButton("End Game");
+        panel.add(buttonEnd);
+
+        frame.add(panel);
         frame.setVisible(true);
     }
 }
