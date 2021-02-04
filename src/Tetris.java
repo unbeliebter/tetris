@@ -1,10 +1,8 @@
 import javax.swing.*;
-import java.awt.*;
 
 public class Tetris {
-    public static void main(String[] args) {
-        Tetromino test = new Tetromino(1);
 
+    public Tetris() {
         JFrame frame = new JFrame("Tetris");
         frame.setSize(600, 800);
         frame.setTitle("Tetris");
@@ -18,5 +16,9 @@ public class Tetris {
 
         frame.add(panel);
         frame.setVisible(true);
+    }
+    public static void main(String[] args) {
+        Tetromino test = new Tetromino(1);
+        Tetris tetris = new Tetris();
     }
 }
