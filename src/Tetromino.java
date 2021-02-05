@@ -1,5 +1,3 @@
-package tetrominos;
-
 public class Tetromino {
 
     static int x1;
@@ -10,6 +8,7 @@ public class Tetromino {
     static int y3;
     static int x4;
     static int y4;
+
 
     public Tetromino(int n) {
         switch (n) {
@@ -111,8 +110,8 @@ public class Tetromino {
             y4 += y;
         }
         else {
-            System.out.println("Can't move out of board");
-        }
+                System.out.println("Can't move out of board");
+            }
 
 
     }
