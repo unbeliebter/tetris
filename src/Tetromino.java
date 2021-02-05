@@ -9,6 +9,7 @@ public class Tetromino {
     static int x4;
     static int y4;
 
+
     public Tetromino(int n) {
         switch (n) {
 //L-Shape
@@ -89,6 +90,29 @@ public class Tetromino {
                 y4 = 39;
             }
         }
+
+    }
+
+    //move tetrominos around the grid
+    public static void move(int x, int y) {
+        if (x1 + x <= 9 && x1 + x >= 0 && y1 + y <= 39 && y1 + x >= 0
+                && x2 + x <= 9 && x2 + x >= 0 && y2 + y <= 39 && y2 + x >= 0
+                && x3 + x <= 9 && x3 + x >= 0 && y3 + y <= 39 && y3 + x >= 0
+                && x4 + x <= 9 && x4 + x >= 0 && y4 + y <= 39 && y4 + x >= 0) {
+
+            x1 += x;
+            x2 += x;
+            x3 += x;
+            x4 += x;
+            y1 += y;
+            y2 += y;
+            y3 += y;
+            y4 += y;
+        }
+        else {
+                System.out.println("Can't move out of board");
+            }
+
 
     }
 }
