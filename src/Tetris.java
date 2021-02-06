@@ -21,7 +21,7 @@ public class Tetris {
 
         */
 
-        PlayField playField = new PlayField(10, 40);
+        PlayField playField = new PlayField();
 
         frame.add(new PlayFieldCanvas(playField));
         System.out.println("TEST3");
