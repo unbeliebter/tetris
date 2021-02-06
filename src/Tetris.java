@@ -20,8 +20,15 @@ public class Tetris {
         frame.setVisible(true);
     }
     public static void main(String[] args) {
-        Tetromino test = new Tetromino(1);
+        Tetromino test = new Tetromino(0);
         Tetris tetris = new Tetris();
-        test.move(5, -2);
+        test.rotate();
+        System.out.println(test.getX1()+"/"+test.getY1());
+        System.out.println(test.getX2()+"/"+test.getY2());
+        System.out.println(test.getX3()+"/"+test.getY3());
+        System.out.println(test.getX4()+"/"+test.getY4());
+
     }
+
+
 }
