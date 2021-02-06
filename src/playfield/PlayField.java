@@ -1,6 +1,6 @@
 package playfield;
 
-public class PlayField {
+public class PlayField extends Object{
 
     public static int xMax;
     public static int yMax;
