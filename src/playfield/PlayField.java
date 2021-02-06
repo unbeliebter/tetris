@@ -1,18 +1,13 @@
 package playfield;
 
-import tetrominos.Tetromino;
-
 public class PlayField extends PlayFieldCanvas {
 
-    public static int xMax;
-    public static int yMax;
-    public int[][] array;
-    public int points;
-    public Tetromino liveTetromino;
+    public static int xMax = 10;
+    public static int yMax = 40;
+    public static int[][] array = new int[xMax + 2][yMax + 2];
+    public static int points;
 
     public PlayField() {
-        xMax = 10;
-        yMax = 40;
-        array = new int[xMax + 2][yMax + 2];
+        super();
     }
 }
