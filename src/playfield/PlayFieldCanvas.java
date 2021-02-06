@@ -7,7 +7,7 @@ import java.text.AttributedCharacterIterator;
 
 public class PlayFieldCanvas extends JComponent {
 
-    private static int wide = PlayField.yMax;
+    private static int wide = PlayField.getyMax();
     private static PlayField playField;
 
     public PlayFieldCanvas(PlayField actualPlayField) {
@@ -194,14 +194,13 @@ public class PlayFieldCanvas extends JComponent {
         };
         playField = actualPlayField;
         paint(graphics);
-        System.out.println("TEST");
     }
 
     public PlayFieldCanvas() {
     }
 
     public static Color CodeToColor() {
-        return Color.BLACK;
+        return Color.GRAY;
     }
 
     public static void drawRects(Graphics graphics, int wide, int height) {
@@ -209,7 +208,7 @@ public class PlayFieldCanvas extends JComponent {
     }
 
     public void paint(Graphics graphics) {
-        graphics.setColor(Color.RED);
+        graphics.setColor(Color.BLACK);
         for (int i = 0; i <= PlayField.xMax; i++) {
             graphics.drawLine(i * wide, 0, i * wide, PlayField.yMax * wide);
         }
