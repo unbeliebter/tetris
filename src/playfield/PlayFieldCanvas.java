@@ -209,12 +209,12 @@ public class PlayFieldCanvas extends JComponent {
     }
 
     public void paint(Graphics graphics) {
-        graphics.setColor(Color.BLACK);
+        graphics.setColor(Color.RED);
         for (int i = 0; i <= PlayField.xMax; i++) {
             graphics.drawLine(i * wide, 0, i * wide, PlayField.yMax * wide);
         }
         for (int i = 0; i <= PlayField.yMax; i++) {
-            graphics.drawLine(i * wide, 0, PlayField.xMax * wide, i* wide);
+            graphics.drawLine(0,i * wide, PlayField.xMax * wide, i * wide);
         }
 
         for (int i = 0; i < PlayField.xMax; i++) {
