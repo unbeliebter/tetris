@@ -1,3 +1,5 @@
+package tetrominos;
+
 public class Tetromino {
 
     static int x1;
@@ -8,12 +10,13 @@ public class Tetromino {
     static int y3;
     static int x4;
     static int y4;
+    static int shape;
 
 
     public Tetromino(int n) {
         switch (n) {
 //L-Shape
-            case (1) -> {
+            case (0) -> {
                 x1 = 0;
                 y1 = 38;
                 x2 = 0;
@@ -22,9 +25,10 @@ public class Tetromino {
                 y3 = 39;
                 x4 = 2;
                 y4 = 39;
+                shape = n;
             }
 //L-Mirrored_Shape
-            case (2) -> {
+            case (1) -> {
                 x1 = 0;
                 y1 = 39;
                 x2 = 0;
@@ -33,9 +37,10 @@ public class Tetromino {
                 y3 = 38;
                 x4 = 2;
                 y4 = 38;
+                shape = n;
             }
 //S-Shape
-            case (3) -> {
+            case (2) -> {
                 x1 = 0;
                 y1 = 38;
                 x2 = 1;
@@ -44,8 +49,21 @@ public class Tetromino {
                 y3 = 39;
                 x4 = 2;
                 y4 = 39;
+                shape = n;
             }
 //S-Mirrored-Shape
+            case (3) -> {
+                x1 = 0;
+                y1 = 39;
+                x2 = 1;
+                y2 = 39;
+                x3 = 1;
+                y3 = 38;
+                x4 = 2;
+                y4 = 38;
+                shape = n;
+            }
+//T-Shape
             case (4) -> {
                 x1 = 0;
                 y1 = 39;
@@ -54,21 +72,11 @@ public class Tetromino {
                 x3 = 1;
                 y3 = 38;
                 x4 = 2;
-                y4 = 38;
-            }
-//T-Shape
-            case (5) -> {
-                x1 = 0;
-                y1 = 39;
-                x2 = 1;
-                y2 = 39;
-                x3 = 1;
-                y3 = 38;
-                x4 = 2;
                 y4 = 39;
+                shape = n;
             }
 //Square-Shape
-            case (6) -> {
+            case (5) -> {
                 x1 = 0;
                 y1 = 39;
                 x2 = 1;
@@ -77,9 +85,10 @@ public class Tetromino {
                 y3 = 38;
                 x4 = 1;
                 y4 = 38;
+                shape = n;
             }
 //Line-Shape
-            case (7) -> {
+            case (6) -> {
                 x1 = 0;
                 y1 = 39;
                 x2 = 1;
@@ -88,6 +97,7 @@ public class Tetromino {
                 y3 = 39;
                 x4 = 3;
                 y4 = 39;
+                shape = n;
             }
         }
 
@@ -108,11 +118,9 @@ public class Tetromino {
             y2 += y;
             y3 += y;
             y4 += y;
+        } else {
+            System.out.println("Can't move out of board");
         }
-        else {
-                System.out.println("Can't move out of board");
-            }
-
-
     }
 }
+

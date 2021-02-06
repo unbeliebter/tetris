@@ -1,7 +1,6 @@
 import tetrominos.Tetromino;
 
 import javax.swing.*;
-import java.sql.SQLOutput;
 
 public class Tetris {
 
@@ -24,6 +23,5 @@ public class Tetris {
         Tetromino test = new Tetromino(1);
         Tetris tetris = new Tetris();
         test.move(5, -2);
-        System.out.println("1");
     }
 }
