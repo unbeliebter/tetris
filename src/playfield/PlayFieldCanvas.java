@@ -7,7 +7,7 @@ import java.text.AttributedCharacterIterator;
 
 public class PlayFieldCanvas extends JComponent {
 
-    private static int wide = PlayField.yMax;
+    private static int wide = PlayField.getyMax();
     private static PlayField playField;
 
     public PlayFieldCanvas(PlayField actualPlayField) {

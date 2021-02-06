@@ -12,4 +12,8 @@ public class PlayField {
         yMax = 40;
 
     }
+
+    public static int getyMax() {
+        return yMax;
+    }
 }
