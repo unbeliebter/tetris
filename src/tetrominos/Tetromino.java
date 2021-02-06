@@ -122,18 +122,5 @@ public class Tetromino {
             System.out.println("Can't move out of board");
         }
     }
-
-        public static void rotate_left ( int n) {
-            if (shape == 5) {
-                return;
-            }
-        }
-
-
-    public static void rotate_right(int n) {
-        if (shape == 5) {
-            return;
-        }
-    }
 }
 
