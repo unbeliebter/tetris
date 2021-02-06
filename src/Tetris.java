@@ -3,7 +3,6 @@ import playfield.PlayFieldCanvas;
 import tetrominos.Tetromino;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class Tetris {
 
@@ -13,19 +12,16 @@ public class Tetris {
         frame.setTitle("Tetris");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
-/*
-        JPanel panel = new JPanel();
 
+        JPanel panel = new JPanel();
         JButton buttonEnd = new JButton("End Game");
         panel.add(buttonEnd);
-
-        */
 
         PlayField playField = new PlayField();
 
         frame.add(new PlayFieldCanvas(playField));
         System.out.println("TEST3");
-       // frame.add(panel);
+        //frame.add(panel);
         frame.setVisible(true);
     }
     public static void main(String[] args) {
