@@ -28,6 +28,4 @@ public class Tetris {
         System.out.println(test.getX4()+"/"+test.getY4());
 
     }
-
-
 }
