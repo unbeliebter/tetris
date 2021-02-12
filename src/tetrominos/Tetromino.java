@@ -11,7 +11,6 @@ public class Tetromino {
     static int x4;
     static int y4;
     static int shape;
-    static int turn;
 
 
     public Tetromino(int n) {
@@ -19,93 +18,93 @@ public class Tetromino {
 //L-Shape
             case (0) -> {
                 x1 = 0;
-                y1 = 38;
+                y1 = 28;
                 x2 = 0;
-                y2 = 39;
+                y2 = 29;
                 x3 = 1;
-                y3 = 38;
+                y3 = 28;
                 x4 = 2;
-                y4 = 38;
+                y4 = 28;
                 shape = n;
-                turn = 0;
+
             }
 //L-Mirrored_Shape
             case (1) -> {
                 x1 = 0;
-                y1 = 39;
+                y1 = 29;
                 x2 = 0;
-                y2 = 38;
+                y2 = 28;
                 x3 = 1;
-                y3 = 38;
+                y3 = 28;
                 x4 = 2;
-                y4 = 38;
+                y4 = 28;
                 shape = n;
-                turn = 0;
+
             }
 //S-Shape
             case (2) -> {
                 x1 = 0;
-                y1 = 38;
+                y1 = 28;
                 x2 = 1;
-                y2 = 38;
+                y2 = 28;
                 x3 = 1;
-                y3 = 39;
+                y3 = 29;
                 x4 = 2;
-                y4 = 39;
+                y4 = 292;
                 shape = n;
-                turn = 0;
+
             }
 //S-Mirrored-Shape
             case (3) -> {
                 x1 = 0;
-                y1 = 39;
+                y1 = 29;
                 x2 = 1;
-                y2 = 39;
+                y2 = 29;
                 x3 = 1;
-                y3 = 38;
+                y3 = 28;
                 x4 = 2;
-                y4 = 38;
+                y4 = 28;
                 shape = n;
-                turn = 0;
+
             }
 //T-Shape
             case (4) -> {
                 x1 = 0;
-                y1 = 39;
+                y1 = 29;
                 x2 = 1;
-                y2 = 39;
+                y2 = 29;
                 x3 = 1;
-                y3 = 38;
+                y3 = 28;
                 x4 = 2;
-                y4 = 39;
+                y4 = 29;
                 shape = n;
-                turn = 0;
+
             }
 //Square-Shape
             case (5) -> {
                 x1 = 0;
-                y1 = 39;
+                y1 = 29;
                 x2 = 1;
-                y2 = 39;
+                y2 = 29;
                 x3 = 0;
-                y3 = 38;
+                y3 = 28;
                 x4 = 1;
-                y4 = 38;
+                y4 = 28;
                 shape = n;
-                turn = 0;
+
             }
 //Line-Shape
             case (6) -> {
                 x1 = 0;
-                y1 = 39;
+                y1 = 29;
                 x2 = 1;
-                y2 = 39;
+                y2 = 29;
                 x3 = 2;
-                y3 = 39;
+                y3 = 29;
                 x4 = 3;
-                y4 = 39;
+                y4 = 29;
                 shape = n;
-                turn = 0;
+
             }
         }
 
