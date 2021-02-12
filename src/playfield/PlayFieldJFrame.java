@@ -2,30 +2,20 @@ package playfield;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Font;
 import java.awt.GridLayout;
 import javax.swing.*;
 
 class PlayFieldJframe extends JPanel {
-    private static int CLUSTER = 3;
-    private static int MAX_ROWS = 9;
-    private static float FIELD_PTS = 32f;
-    private static int GAP = 3;
-    private static Color BG = Color.BLACK;
-    private static Color SOLVED_BG = Color.LIGHT_GRAY;
-    public static int TIMER_DELAY = 2 * 1000;
-    private JTextField[][] fieldGrid = new JTextField[MAX_ROWS][MAX_ROWS];
+    private static int xAxe = 10;
+    private static int yAxe = 40;
+    private JTextField[][] fieldGrid = new JTextField[xAxe][yAxe];
 
     public PlayFieldJframe() {
-        JPanel mainPanel = new JPanel(new GridLayout(CLUSTER, CLUSTER));
-        mainPanel.setBorder(BorderFactory.createEmptyBorder(GAP, GAP, GAP, GAP));
-        mainPanel.setBackground(BG);
-        JPanel[][] panels = new JPanel[CLUSTER][CLUSTER];
+        JPanel mainPanel = new JPanel(new GridLayout(xAxe, yAxe));
+        JPanel[][] panels = new JPanel[xAxe][yAxe];
         for (int i = 0; i < panels.length; i++) {
             for (int j = 0; j < panels[i].length; j++) {
-                panels[i][j] = new JPanel(new GridLayout(CLUSTER, CLUSTER, 1, 1));
-                panels[i][j].setBackground(BG);
-                panels[i][j].setBorder(BorderFactory.createEmptyBorder(GAP, GAP, GAP, GAP));
+                panels[i][j] = new JPanel();
                 mainPanel.add(panels[i][j]);
             }
         }
@@ -33,9 +23,7 @@ class PlayFieldJframe extends JPanel {
         for (int row = 0; row < fieldGrid.length; row++) {
             for (int col = 0; col < fieldGrid[row].length; col++) {
                 fieldGrid[row][col] = createField(row, col);
-                int i = row / 3;
-                int j = col / 3;
-                panels[i][j].add(fieldGrid[row][col]);
+                panels[row][col].add(fieldGrid[row][col]);
             }
         }
 
@@ -44,9 +32,9 @@ class PlayFieldJframe extends JPanel {
     }
 
     private JTextField createField(int row, int col) {
-        JTextField field = new JTextField(2);
+        JTextField field = new JTextField();
+        field.setBackground(Color.BLUE);
         field.setHorizontalAlignment(JTextField.CENTER);
-        field.setFont(field.getFont().deriveFont(Font.BOLD, FIELD_PTS));
 
         return field;
     }
@@ -54,7 +42,7 @@ class PlayFieldJframe extends JPanel {
     private static void createAndShowGui() {
         PlayFieldJframe mainPanel = new PlayFieldJframe();
 
-        JFrame frame = new JFrame("SudokuMCVE");
+        JFrame frame = new JFrame("Tetris");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.getContentPane().add(mainPanel);
         frame.pack();
