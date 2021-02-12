@@ -25,6 +25,16 @@ public class PlayFieldJframe extends JPanel {
             }
         }
         add(mainPanel);
+
+        //LABEL MUSS NOCH DYNAMISCHE PUNKTE ERHALTEN
+        JLabel pointsLabel = new JLabel("PUNKTE");
+        JButton stopGameButton = new JButton("Stop");
+        JButton closeGame = new JButton("Close Game");
+
+        add(pointsLabel);
+        add(stopGameButton);
+        add(closeGame);
+
     }
 
     private JTextField createField() {
@@ -39,9 +49,11 @@ public class PlayFieldJframe extends JPanel {
         PlayFieldJframe mainPanel = new PlayFieldJframe();
 
         JFrame frame = new JFrame("Tetris");
-        frame.setSize(500, 1000);
+        frame.setSize(450, 1000);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.getContentPane().add(mainPanel);
+
         frame.setVisible(true);
+
     }
 }
