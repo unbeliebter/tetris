@@ -21,9 +21,9 @@ public class PlayField extends Object {
 
     public static void deleterow(int y) {
 
-        for (int i = 0; i < y; i++) {
-            for (int j = 0; j < 10; j++) {
-                array[i][j] = 0;
+                for (int i = 0; i < y; i++) {
+                    for (int j = 0; j < 10; j++) {
+                        array[i][j] = 0;
             }
         }
     }
