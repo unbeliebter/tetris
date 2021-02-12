@@ -1,4 +1,5 @@
 import playfield.PlayField;
+import playfield.PlayFieldJframe;
 import tetrominos.Tetromino;
 
 import javax.swing.*;
@@ -16,6 +17,10 @@ public class Tetris {
         System.out.println(test.getX2()+"/"+test.getY2());
         System.out.println(test.getX3()+"/"+test.getY3());
         System.out.println(test.getX4()+"/"+test.getY4());
+
+        SwingUtilities.invokeLater(() -> {
+            PlayFieldJframe.createPlayFieldJFrame();
+        });
     }
 
 
