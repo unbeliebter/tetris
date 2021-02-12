@@ -1,9 +1,8 @@
 import playfield.PlayField;
-import playfield.PlayFieldCanvas;
+import playfield.PlayFieldJframe;
 import tetrominos.Tetromino;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class Tetris {
 
@@ -19,16 +18,9 @@ public class Tetris {
         System.out.println(test.getX3()+"/"+test.getY3());
         System.out.println(test.getX4()+"/"+test.getY4());
 
-        JFrame frame = new JFrame();
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        PlayField playField = new PlayField();
-        System.out.println("TEST");
-        frame.add(new PlayFieldCanvas(playField));
-        frame.setSize(900, 800);
-        System.out.println("TEST2");
-        frame.setVisible(true);
-
+        SwingUtilities.invokeLater(() -> {
+            PlayFieldJframe.createPlayFieldJFrame();
+        });
     }
 
 
