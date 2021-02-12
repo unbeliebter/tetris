@@ -44,10 +44,4 @@ public class PlayFieldJframe extends JPanel {
         frame.getContentPane().add(mainPanel);
         frame.setVisible(true);
     }
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            createPlayFieldJFrame();
-        });
-    }
 }

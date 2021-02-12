@@ -6,9 +6,6 @@ import javax.swing.*;
 
 public class Tetris {
 
-    public Tetris() {
-
-    }
     public static void main(String[] args) {
         Tetromino test = new Tetromino(0);
         Tetris tetris = new Tetris();
