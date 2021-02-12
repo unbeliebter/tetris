@@ -15,9 +15,7 @@ public class Tetris {
         System.out.println(test.getX3()+"/"+test.getY3());
         System.out.println(test.getX4()+"/"+test.getY4());
 
-        SwingUtilities.invokeLater(() -> {
-            PlayFieldJframe.createPlayFieldJFrame();
-        });
+        SwingUtilities.invokeLater(PlayFieldJframe::createPlayFieldJFrame);
     }
 
 
