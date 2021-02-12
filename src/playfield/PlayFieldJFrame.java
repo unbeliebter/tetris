@@ -3,7 +3,7 @@ package playfield;
 import java.awt.*;
 import javax.swing.*;
 
-class PlayFieldJframe extends JPanel {
+public class PlayFieldJframe extends JPanel {
     private static int xAxe = 10;
     private static int yAxe = 30;
     private JTextField[][] fieldGrid = new JTextField[yAxe][xAxe];
@@ -35,7 +35,7 @@ class PlayFieldJframe extends JPanel {
         return field;
     }
 
-    private static void createAndShowGui() {
+    public static void createPlayFieldJFrame() {
         PlayFieldJframe mainPanel = new PlayFieldJframe();
 
         JFrame frame = new JFrame("Tetris");
@@ -47,7 +47,7 @@ class PlayFieldJframe extends JPanel {
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            createAndShowGui();
+            createPlayFieldJFrame();
         });
     }
 }
