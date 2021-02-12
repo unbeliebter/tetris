@@ -4,18 +4,16 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.*;
 
 class PlayFieldJframe extends JPanel {
-    private static final int CLUSTER = 3;
-    private static final int MAX_ROWS = 9;
-    private static final float FIELD_PTS = 32f;
-    private static final int GAP = 3;
-    private static final Color BG = Color.BLACK;
-    private static final Color SOLVED_BG = Color.LIGHT_GRAY;
-    public static final int TIMER_DELAY = 2 * 1000;
+    private static int CLUSTER = 3;
+    private static int MAX_ROWS = 9;
+    private static float FIELD_PTS = 32f;
+    private static int GAP = 3;
+    private static Color BG = Color.BLACK;
+    private static Color SOLVED_BG = Color.LIGHT_GRAY;
+    public static int TIMER_DELAY = 2 * 1000;
     private JTextField[][] fieldGrid = new JTextField[MAX_ROWS][MAX_ROWS];
 
     public PlayFieldJframe() {
@@ -43,7 +41,6 @@ class PlayFieldJframe extends JPanel {
 
         setLayout(new BorderLayout());
         add(mainPanel, BorderLayout.CENTER);
-        add(new JButton(new SolveAction("Solve")), BorderLayout.PAGE_END);
     }
 
     private JTextField createField(int row, int col) {
@@ -52,40 +49,6 @@ class PlayFieldJframe extends JPanel {
         field.setFont(field.getFont().deriveFont(Font.BOLD, FIELD_PTS));
 
         return field;
-    }
-
-    private class SolveAction extends AbstractAction {
-
-        public SolveAction(String name) {
-            super(name);
-            int mnemonic = (int) name.charAt(0);
-            putValue(MNEMONIC_KEY, mnemonic);
-        }
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            new Timer(TIMER_DELAY, new ActionListener() {
-                private int i = 0;
-                private int j = 0;
-
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    // MAX_ROWS is 9
-                    if (i == MAX_ROWS) {
-                        ((Timer) e.getSource()).stop();
-                    }
-                    if (j == MAX_ROWS) {
-                        i++;
-                        j = 0;
-                    }
-                    int number = (int) (MAX_ROWS * Math.random()) + 1;
-                    fieldGrid[i][j].setBackground(SOLVED_BG);
-                    fieldGrid[i][j].setText(String.valueOf(number));
-
-                    j++;
-                }
-            }).start();
-        }
     }
 
     private static void createAndShowGui() {
