@@ -2,16 +2,16 @@ package tetrominos;
 
 public class Tetromino {
 
-    static int x1;
-    static int y1;
-    static int x2;
-    static int y2;
-    static int x3;
-    static int y3;
-    static int x4;
-    static int y4;
-    static int shape;
-    static int colorCode;
+    public static int x1;
+    public static int y1;
+    public static int x2;
+    public static int y2;
+    public static int x3;
+    public static int y3;
+    public static int x4;
+    public static int y4;
+    public static int shape;
+    public static int colorCode;
 
 
     public Tetromino(int n) {
