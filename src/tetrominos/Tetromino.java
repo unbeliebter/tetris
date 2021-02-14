@@ -2,17 +2,18 @@ package tetrominos;
 
 public class Tetromino {
 
-    static int x1;
-    static int y1;
-    static int x2;
-    static int y2;
-    static int x3;
-    static int y3;
-    static int x4;
-    static int y4;
-    static int shape;
 
-
+    public static int x1;
+    public static int y1;
+    public static int x2;
+    public static int y2;
+    public static int x3;
+    public static int y3;
+    public static int x4;
+    public static int y4;
+    public static int shape;
+    public static int colorCode;
+  
     public Tetromino(int n) {
         switch (n) {
 //L-Shape
@@ -26,7 +27,7 @@ public class Tetromino {
                 x4 = 2;
                 y4 = 28;
                 shape = n;
-
+                colorCode = n;
             }
 //L-Mirrored_Shape
             case (1) -> {
@@ -39,7 +40,7 @@ public class Tetromino {
                 x4 = 2;
                 y4 = 28;
                 shape = n;
-
+                colorCode = n;
             }
 //S-Shape
             case (2) -> {
@@ -52,7 +53,7 @@ public class Tetromino {
                 x4 = 2;
                 y4 = 292;
                 shape = n;
-
+                colorCode = n;
             }
 //S-Mirrored-Shape
             case (3) -> {
@@ -65,7 +66,7 @@ public class Tetromino {
                 x4 = 2;
                 y4 = 28;
                 shape = n;
-
+                colorCode = n;
             }
 //T-Shape
             case (4) -> {
@@ -78,7 +79,7 @@ public class Tetromino {
                 x4 = 2;
                 y4 = 29;
                 shape = n;
-
+                colorCode = n;
             }
 //Square-Shape
             case (5) -> {
@@ -91,7 +92,7 @@ public class Tetromino {
                 x4 = 1;
                 y4 = 28;
                 shape = n;
-
+                colorCode = n;
             }
 //Line-Shape
             case (6) -> {
@@ -104,6 +105,7 @@ public class Tetromino {
                 x4 = 3;
                 y4 = 29;
                 shape = n;
+                colorCode = n;
 
             }
         }
