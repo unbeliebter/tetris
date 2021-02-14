@@ -2,6 +2,7 @@ package tetrominos;
 
 public class Tetromino {
 
+
     public static int x1;
     public static int y1;
     public static int x2;
@@ -12,8 +13,7 @@ public class Tetromino {
     public static int y4;
     public static int shape;
     public static int colorCode;
-
-
+  
     public Tetromino(int n) {
         switch (n) {
 //L-Shape
@@ -28,7 +28,6 @@ public class Tetromino {
                 y4 = 28;
                 shape = n;
                 colorCode = n;
-
             }
 //L-Mirrored_Shape
             case (1) -> {
@@ -42,7 +41,6 @@ public class Tetromino {
                 y4 = 28;
                 shape = n;
                 colorCode = n;
-
             }
 //S-Shape
             case (2) -> {
@@ -56,7 +54,6 @@ public class Tetromino {
                 y4 = 292;
                 shape = n;
                 colorCode = n;
-
             }
 //S-Mirrored-Shape
             case (3) -> {
@@ -70,7 +67,6 @@ public class Tetromino {
                 y4 = 28;
                 shape = n;
                 colorCode = n;
-
             }
 //T-Shape
             case (4) -> {
@@ -84,7 +80,6 @@ public class Tetromino {
                 y4 = 29;
                 shape = n;
                 colorCode = n;
-
             }
 //Square-Shape
             case (5) -> {
@@ -98,7 +93,6 @@ public class Tetromino {
                 y4 = 28;
                 shape = n;
                 colorCode = n;
-
             }
 //Line-Shape
             case (6) -> {
