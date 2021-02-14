@@ -1,5 +1,7 @@
 package playfield;
 
+import tetrominos.Tetromino;
+
 import java.awt.*;
 import javax.swing.*;
 
@@ -39,10 +41,50 @@ public class PlayFieldJframe extends JPanel {
 
     private JTextField createField() {
         JTextField field = new JTextField();
+       // field.setBackground(Color.RED);
         field.setPreferredSize(new Dimension(30, 20));
         field.setEditable(false);
 
         return field;
+    }
+
+    //MAYBE WORKS BUT DON'T COLOR A FIELD AT ONCE
+    public static void colorField(JTextField field, Tetromino tetromino, JTextField fieldGrid, JPanel panel) {
+
+        Color color = Color.WHITE;
+        int colorCode = Tetromino.colorCode;
+
+        switch (colorCode) {
+            case (0) -> {
+                color = Color.RED;
+            }
+
+            case (1) -> {
+                color = Color.PINK;
+            }
+
+            case (2) -> {
+                color = Color.CYAN;
+            }
+
+            case (3) -> {
+                color = Color.ORANGE;
+            }
+
+            case (4) -> {
+                color = Color.MAGENTA;
+            }
+
+            case (5) -> {
+                color = Color.GREEN;
+            }
+
+            case (6) -> {
+                color = Color.blue;
+            }
+        }
+
+        field.setBackground(color);
     }
 
     public static void createPlayFieldJFrame() {
