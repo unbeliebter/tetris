@@ -11,6 +11,7 @@ public class Tetromino {
     static int x4;
     static int y4;
     static int shape;
+    static int colorCode;
 
 
     public Tetromino(int n) {
@@ -26,6 +27,7 @@ public class Tetromino {
                 x4 = 2;
                 y4 = 28;
                 shape = n;
+                colorCode = n;
 
             }
 //L-Mirrored_Shape
@@ -39,6 +41,7 @@ public class Tetromino {
                 x4 = 2;
                 y4 = 28;
                 shape = n;
+                colorCode = n;
 
             }
 //S-Shape
@@ -52,6 +55,7 @@ public class Tetromino {
                 x4 = 2;
                 y4 = 292;
                 shape = n;
+                colorCode = n;
 
             }
 //S-Mirrored-Shape
@@ -65,6 +69,7 @@ public class Tetromino {
                 x4 = 2;
                 y4 = 28;
                 shape = n;
+                colorCode = n;
 
             }
 //T-Shape
@@ -78,6 +83,7 @@ public class Tetromino {
                 x4 = 2;
                 y4 = 29;
                 shape = n;
+                colorCode = n;
 
             }
 //Square-Shape
@@ -91,6 +97,7 @@ public class Tetromino {
                 x4 = 1;
                 y4 = 28;
                 shape = n;
+                colorCode = n;
 
             }
 //Line-Shape
@@ -104,6 +111,7 @@ public class Tetromino {
                 x4 = 3;
                 y4 = 29;
                 shape = n;
+                colorCode = n;
 
             }
         }
