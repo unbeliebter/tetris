@@ -3,6 +3,8 @@ package playfield;
 import tetrominos.Tetromino;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class PlayFieldJframe extends JPanel {
@@ -10,7 +12,7 @@ public class PlayFieldJframe extends JPanel {
     private static int yAxe = 30;
     private JTextField[][] fieldGrid = new JTextField[yAxe][xAxe];
 
-    public PlayFieldJframe() {
+    public PlayFieldJframe(JFrame frame) {
         JPanel mainPanel = new JPanel(new GridLayout(yAxe, xAxe));
         JPanel[][] panels = new JPanel[yAxe][xAxe];
         for (int i = 0; i < panels.length; i++) {
@@ -31,12 +33,18 @@ public class PlayFieldJframe extends JPanel {
         //LABEL MUSS NOCH DYNAMISCHE PUNKTE ERHALTEN
         JLabel pointsLabel = new JLabel("PUNKTE");
         JButton stopGameButton = new JButton("Stop");
-        JButton closeGame = new JButton("Close Game");
+        JButton closeGameButton = new JButton("Close Game");
 
         add(pointsLabel);
         add(stopGameButton);
-        add(closeGame);
+        add(closeGameButton);
 
+        closeGameButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+            }
+        });
     }
 
     private JTextField createField() {
@@ -88,9 +96,8 @@ public class PlayFieldJframe extends JPanel {
     }
 
     public static void createPlayFieldJFrame() {
-        PlayFieldJframe mainPanel = new PlayFieldJframe();
-
         JFrame frame = new JFrame("Tetris");
+        PlayFieldJframe mainPanel = new PlayFieldJframe(frame);
         frame.setSize(450, 1000);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.getContentPane().add(mainPanel);
