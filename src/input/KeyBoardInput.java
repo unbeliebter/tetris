@@ -2,18 +2,15 @@ package input;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 public class KeyBoardInput implements KeyListener {
-    private final Map<Integer, Boolean> currentStates = new ConcurrentHashMap<Integer, Boolean>();
 
-    public KeyBoardInput() {
-        currentStates.put(KeyEvent.VK_W, false);
-        currentStates.put(KeyEvent.VK_A, false);
-        currentStates.put(KeyEvent.VK_S, false);
-        currentStates.put(KeyEvent.VK_D, false);
-    }
+    private static final byte MASK_PRESSED = 0x1;
+    private static final byte MASK_MULTIPLE_TIMES = 0x2;
+
+    private final Map<Integer, Byte> states = new HashMap<>();
 
     public boolean left() {
         return keyDown(KeyEvent.VK_A);
@@ -32,22 +29,36 @@ public class KeyBoardInput implements KeyListener {
     }
 
     private boolean keyDown(int keyCode) {
-        return currentStates.put(keyCode, false);
+        return states.containsKey(keyCode) && (states.get(keyCode) & MASK_PRESSED) != 0;
+    }
+
+    private boolean keyDownOnce(int keyCode) {
+        return states.containsKey(keyCode) && (states.get(keyCode) & MASK_MULTIPLE_TIMES) == 0;
     }
 
     @Override
     public void keyPressed(KeyEvent keyEvent) {
-        if (currentStates.containsKey(keyEvent.getKeyCode())) {
-            currentStates.put(keyEvent.getKeyCode(), true);
-        }
+        states.compute(keyEvent.getKeyCode(), (key, currentValue) -> {
+            if (currentValue == null) return MASK_PRESSED;
+
+            byte value = currentValue;
+            if ((value & MASK_PRESSED) != 0) {
+                value |= MASK_MULTIPLE_TIMES;
+            }
+
+            value |= MASK_PRESSED;
+            return value;
+        });
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
+        states.remove(e.getKeyCode());
     }
 
     @Override
     public void keyTyped(KeyEvent e) {
     }
+
 }
 
