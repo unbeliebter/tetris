@@ -9,10 +9,10 @@ public class KeyBoardInput implements KeyListener {
     private final Map<Integer, Boolean> currentStates = new ConcurrentHashMap<Integer, Boolean>();
 
     public KeyBoardInput() {
-        currentStates.put(KeyEvent.VK_W, Boolean.FALSE);
-        currentStates.put(KeyEvent.VK_A, Boolean.FALSE);
-        currentStates.put(KeyEvent.VK_S, Boolean.FALSE);
-        currentStates.put(KeyEvent.VK_D, Boolean.FALSE);
+        currentStates.put(KeyEvent.VK_W, false);
+        currentStates.put(KeyEvent.VK_A, false);
+        currentStates.put(KeyEvent.VK_S, false);
+        currentStates.put(KeyEvent.VK_D, false);
     }
 
     public boolean left() {
@@ -32,13 +32,13 @@ public class KeyBoardInput implements KeyListener {
     }
 
     private boolean keyDown(int keyCode) {
-        return currentStates.put(keyCode, Boolean.FALSE);
+        return currentStates.put(keyCode, false);
     }
 
     @Override
     public void keyPressed(KeyEvent keyEvent) {
         if (currentStates.containsKey(keyEvent.getKeyCode())) {
-            currentStates.put(keyEvent.getKeyCode(), Boolean.TRUE);
+            currentStates.put(keyEvent.getKeyCode(), true);
         }
     }
 
