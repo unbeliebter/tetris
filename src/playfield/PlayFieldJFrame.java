@@ -7,12 +7,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
-public class PlayFieldJframe extends JPanel {
+public class PlayFieldJFrame extends JPanel {
     private static int xAxe = 10;
     private static int yAxe = 30;
     private JTextField[][] fieldGrid = new JTextField[yAxe][xAxe];
 
-    public PlayFieldJframe(JFrame frame) {
+    public PlayFieldJFrame(JFrame frame) {
         JPanel mainPanel = new JPanel(new GridLayout(yAxe, xAxe));
         JPanel[][] panels = new JPanel[yAxe][xAxe];
         for (int i = 0; i < panels.length; i++) {
@@ -97,7 +97,7 @@ public class PlayFieldJframe extends JPanel {
 
     public static void createPlayFieldJFrame() {
         JFrame frame = new JFrame("Tetris");
-        PlayFieldJframe mainPanel = new PlayFieldJframe(frame);
+        PlayFieldJFrame mainPanel = new PlayFieldJFrame(frame);
         frame.setSize(450, 1000);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.getContentPane().add(mainPanel);
